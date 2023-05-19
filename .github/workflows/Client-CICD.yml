@@ -35,14 +35,15 @@ jobs:
           docker build --tag $DOCKER_REPOSITORY:latest .
           docker push $DOCKER_REPOSITORY:latest
       
+      
       # Add more steps for testing, linting, etc.
-      - name: Send deployment notification to Slack
-        uses: slackapi/slack-action@v3
-        with:
-          slack-token: ${{ secrets.SLACK_TOKEN }}
-          channel: project
-          message: |
-            Deployment successful!
-            Repository: ${{ github.repository }}
-            Commit: ${{ github.sha }}
+     # - name: Send deployment notification to Slack
+     #   uses: slackapi/slack-action@v3
+      #  with:
+       #   slack-token: ${{ secrets.SLACK_TOKEN }}
+       #   channel: project
+       #   message: |
+        #    Deployment successful!
+        #    Repository: ${{ github.repository }}
+        #    Commit: ${{ github.sha }}
 
